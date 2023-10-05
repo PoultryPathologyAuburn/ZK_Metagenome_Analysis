@@ -1,9 +1,3 @@
-# Metagenome_analysis
-
-Based on the snippet of the script, it appears to be a Bash script designed for metagenomic analysis. It seems to involve merging `.fq` files, among other things. I'll proceed with writing a comprehensive README file to accompany your script.
-
----
-
 # Metagenomic Analysis Pipeline
 
 ## Table of Contents
