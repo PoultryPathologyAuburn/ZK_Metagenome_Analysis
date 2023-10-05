@@ -32,9 +32,45 @@ git clone https://github.com/yourusername/metagenome_analysis.git
 
 ## Dependencies
 
-- Conda environment with name `metagenome`
-- Adapter sequences in a `.fa` file
-- Kraken database
+#### Software
+
+1. **Bash**: Make sure you have Bash shell installed on your system.
+2. **Kraken2**: Download and install from [Kraken2 GitHub Repository](https://github.com/DerrickWood/kraken2).
+3. **Bracken**: Download and install from [Bracken GitHub Repository](https://github.com/jenniferlu717/Bracken).
+
+You can typically install Kraken2 and Bracken using the following commands:
+
+```bash
+# For Kraken2
+git clone https://github.com/DerrickWood/kraken2.git
+cd kraken2
+./install_kraken2.sh $PWD
+
+# For Bracken
+git clone https://github.com/jenniferlu717/Bracken.git
+cd Bracken
+./install_bracken.sh
+```
+
+#### Database
+
+1. **Kraken2 Database**: You can build a Kraken2 database following the instructions [here](https://github.com/DerrickWood/kraken2/wiki/Manual#special-databases).
+   
+   ```bash
+   kraken2-build --standard --threads 12 --db $KRAKEN_DB_NAME
+   ```
+   
+2. **Bracken Database**: After building the Kraken2 database, you can build the Bracken database.
+
+   ```bash
+   bracken-build -d $KRAKEN_DB_NAME -k 35 -l 150
+   ```
+
+Note: Replace `$KRAKEN_DB_NAME` with the name you wish to give to your Kraken2 database.
+
+---
+
+#### Adapter sequences in a `.fa` file
 
 ## Usage
 
