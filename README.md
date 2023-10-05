@@ -10,7 +10,6 @@
 - [Example](#example)
 - [Output](#output)
 - [Contributing](#contributing)
-- [License](#license)
 
 ## Description
 
