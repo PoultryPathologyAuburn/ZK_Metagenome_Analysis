@@ -8,9 +8,9 @@ BASE_DIR="path_to_your_raw_data"
 TARGET_DIR="/path_to_your_target_directory"
 
 # Paths to databases and other resources
-TRUSEQ_ADAPTERS="/home/aubzxk001/metagenomics/WGS_First_Twelve_2019-02-22/adapters.fa"
-KRAKEN_DB="/home/aubzxk001/metagenomics/krakenDB/minikraken2_v2_8GB_201904_UPDATE"
-BRACKEN_DB="/home/aubzxk001/metagenomics/krakenDB/minikraken2_v2_8GB_201904_UPDATE"
+TRUSEQ_ADAPTERS="path_to_adapters.fa"
+KRAKEN_DB="path_to_minikraken2_v2_8GB_201904_UPDATE"
+BRACKEN_DB="path_to_minikraken2_v2_8GB_201904_UPDATE"
 
 # Create the target directory and subdirectories if they don't exist
 mkdir -p "$TARGET_DIR"
