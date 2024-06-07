@@ -13,12 +13,12 @@ KRAKEN_DB="/home/aubzxk001/metagenomics/krakenDB/minikraken2_v2_8GB_201904_UPDAT
 BRACKEN_DB="/home/aubzxk001/metagenomics/krakenDB/minikraken2_v2_8GB_201904_UPDATE"
 
 # Create the target directory and subdirectories if they don't exist
-# mkdir -p "$TARGET_DIR"
-# mkdir -p "$TARGET_DIR/fastqc"
-# mkdir -p "$TARGET_DIR/trimmomatic"
-# mkdir -p "$TARGET_DIR/kraken2"
-# mkdir -p "$TARGET_DIR/bracken"
-# mkdir -p "$TARGET_DIR/megahit"
+mkdir -p "$TARGET_DIR"
+mkdir -p "$TARGET_DIR/fastqc"
+mkdir -p "$TARGET_DIR/trimmomatic"
+mkdir -p "$TARGET_DIR/kraken2"
+mkdir -p "$TARGET_DIR/bracken"
+mkdir -p "$TARGET_DIR/megahit"
 
 # echo "directories created" 
 
@@ -28,23 +28,23 @@ for folder in "$BASE_DIR"/*; do
       # Extract the folder name to use as the base for the output file names
       folder_name=$(basename "$folder")
 
-      # # Initialize empty files for merged forward and reverse reads
-      # forward_file="$TARGET_DIR/${folder_name}_merged_1.fq.gz"
-      # reverse_file="$TARGET_DIR/${folder_name}_merged_2.fq.gz"
+      # Initialize empty files for merged forward and reverse reads
+      forward_file="$TARGET_DIR/${folder_name}_merged_1.fq.gz"
+      reverse_file="$TARGET_DIR/${folder_name}_merged_2.fq.gz"
 
-      # # Concatenate forward and reverse reads
-      # cat "$folder"/*_1.fq.gz > "$forward_file"
-      # cat "$folder"/*_2.fq.gz > "$reverse_file"
+      # Concatenate forward and reverse reads
+      cat "$folder"/*_1.fq.gz > "$forward_file"
+      cat "$folder"/*_2.fq.gz > "$reverse_file"
     
       # # FastQC Quality Check
-      # fastqc "$forward_file" -o "$TARGET_DIR/fastqc"
-      # fastqc "$reverse_file" -o "$TARGET_DIR/fastqc"
+      fastqc "$forward_file" -o "$TARGET_DIR/fastqc"
+      fastqc "$reverse_file" -o "$TARGET_DIR/fastqc"
 
-      # echo "fastq done & trimmomatic starting"
+      echo "fastq done & trimmomatic starting"
 
-      # # Trimming with Trimmomatic
-      # trimmomatic PE -phred33 "$forward_file" "$reverse_file" "$TARGET_DIR/trimmomatic/${folder_name}_1_paired.fq" "$TARGET_DIR/trimmomatic/${folder_name}_1_unpaired.fq" "$TARGET_DIR/trimmomatic/${folder_name}_2_paired.fq" "$TARGET_DIR/trimmomatic/${folder_name}_2_unpaired.fq" ILLUMINACLIP:$TRUSEQ_ADAPTERS:2:30:10 LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 MINLEN:36
-      # echo "done trimming for $folder"
+      # Trimming with Trimmomatic
+      trimmomatic PE -phred33 "$forward_file" "$reverse_file" "$TARGET_DIR/trimmomatic/${folder_name}_1_paired.fq" "$TARGET_DIR/trimmomatic/${folder_name}_1_unpaired.fq" "$TARGET_DIR/trimmomatic/${folder_name}_2_paired.fq" "$TARGET_DIR/trimmomatic/${folder_name}_2_unpaired.fq" ILLUMINACLIP:$TRUSEQ_ADAPTERS:2:30:10 LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 MINLEN:36
+      echo "done trimming for $folder"
 
 
       # Taxonomic Classification with Kraken2
@@ -65,5 +65,4 @@ for folder in "$BASE_DIR"/*; do
 
     fi
 done
-
-# echo "all the script ran successfully"
+echo "all the script ran successfully"
