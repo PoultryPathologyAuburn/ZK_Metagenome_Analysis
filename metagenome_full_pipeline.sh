@@ -2,10 +2,10 @@
 
 source activate metagenome 
 # Base directory containing nested folders with .fq files
-BASE_DIR="/home/aubzxk001/metagenomics/WGS_First_Twelve_2019-02-22/raw_data"
+BASE_DIR="path_to_your_raw_data"
 
 # Target directory to store merged .fq files and output files
-TARGET_DIR="/home/aubzxk001/metagenomics/WGS_First_Twelve_2019-02-22/merged"
+TARGET_DIR="/path_to_your_target_directory"
 
 # Paths to databases and other resources
 TRUSEQ_ADAPTERS="/home/aubzxk001/metagenomics/WGS_First_Twelve_2019-02-22/adapters.fa"
