@@ -20,7 +20,7 @@ This repository contains a Bash script for automating various steps in a metagen
 Clone this repository to your local machine.
 
 ```bash
-git clone https://github.com/yourusername/metagenome_analysis.git
+git clone https://github.com/Zubair2021/metagenome_analysis.git
 ```
 
 ## Dependencies
