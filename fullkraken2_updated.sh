@@ -50,7 +50,7 @@ module load trimmomatic
 # Directory containing your FASTQ files
 input_dir="path_to_raw_reads"
 
-trimmed_reads_dir="trimmed_reads"
+trimmed_reads_dir="path_to_trimmed_reads"
 
 mkdir -p "$trimmed_reads_dir"
 
