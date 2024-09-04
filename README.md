@@ -47,7 +47,7 @@ cd Bracken
 
 #### Database
 
-1. **Kraken2 Database**: You can build a Kraken2 database following the instructions [here](https://github.com/DerrickWood/kraken2/wiki/Manual#special-databases).
+1. **Kraken2 Database**: You can build a Kraken2 database following the instructions [here](https://benlangmead.github.io/aws-indexes/k2).
    
    ```bash
    kraken2-build --standard --threads 12 --db $KRAKEN_DB_NAME
